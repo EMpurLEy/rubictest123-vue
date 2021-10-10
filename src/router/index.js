@@ -7,8 +7,11 @@ const routes = [
   {
     path: '/',
     component: () => import('../views/Home.vue')
+  },
+  {
+    path: '/Login',
+    component:() => import('../views/Login.vue')
   }
-  
 ]
 
 const router = new VueRouter({

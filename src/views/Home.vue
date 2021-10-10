@@ -11,16 +11,16 @@
             <tr>
               <th scope="col">Название</th>
               <th scope="col">Содержимое</th>
-              <th scope="col">Дата?</th>
+              <th scope="col">Дата</th>
               <th></th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="(note, index) in notes" :key="index">
             <tr>
-              <td>{(note.Title)}</td>
-              <td>{(note.Body)}</td>
-              <td>{(note.ChangeData)}</td>
+              <td>{(note.title)}</td>
+              <td>{(note.body)}</td>
+              <td>{(note.changeTime)}</td>
               <td>
                 <button type="button" class="btn btn-warning btn-sm">Update</button>
                 <button type="button" class="btn btn-danger btn-sm">Delete</button>
@@ -44,7 +44,7 @@ export default {
   },
   methods: {
     getNotes() {
-      const path = 'http://localhost:56858/api/Notes';
+      const path = 'http://localhost:8080/api/Notes';
       axios.get(path)
         .then((res) => {
           this.notes = res.data.data;
